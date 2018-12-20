@@ -12,36 +12,36 @@ $(document).ready(function(){
   $('.upload-image').hide()
   $('.delete-image').hide()
   $('.image-description').hide()
+  $('.headerAbout').hide()
+  $('.aboutMe').hide() 
+  $('.submitAboutMe').hide()     
+  $('.editAboutMe').hide()
   // write to local storage from input when button save clicked
 
 
 
   //Going to assign contact info show the buttons
   $('.btn-name').on('click', function(){
+    $('.submitAboutMe').show()         
+    $('.headerAbout').show()    
     $('.contactMe').show()    
     $('.btn-delete').show()  
     $('.contact').show()
-    $('.image-entry').show()
-    $('.upload-image').show()
-    $('.delete-image').show()    
-    $('.image-description').show()
     $('.btn-name').hide()
     $('.name').hide()
     $('.phone-number').hide()
     $('.eMail').hide()
-    $('.aboutMe').hide()    
+    $('.aboutMe').show()        
     var user = sessionStorage.getItem('inputFieldValue');
     user = user ? user.split(':') : []
     var userName =  $('.name').val()   
     var userNumber = $('.phone-number').val()
     var userEmail =  $('.eMail').val()
-    var about = $('.aboutMe').val()    
     user.push(userName, userNumber, userEmail)
     // user.push(userNumber)
     // user.push(userEmail)
     user = user.join("~ ")
     sessionStorage.setItem('inputFieldValue', user)
-    $('.aboutmeLeft').text(about)    
     //Prints it out on the screen
     var myItemInStorage = sessionStorage.getItem('inputFieldValue');
     // console.log('user' , user);
@@ -64,6 +64,24 @@ $(document).ready(function(){
     $('.aboutMe').show()        
     sessionStorage.removeItem('inputFieldValue'); //Only removes the last item in local storage with the given key
   });
+
+  $('.submitAboutMe').on('click', function(){
+    var about = $('.aboutMe').val()    
+    $('.aboutmeLeft').text(about)
+    $('.aboutMe').hide() 
+    $('.submitAboutMe').hide()
+    $('.editAboutMe').show()
+    $('.image-entry').show()
+    $('.upload-image').show()
+    $('.delete-image').show()    
+    $('.image-description').show()    
+  })
+
+  $('.editAboutMe').on('click', function(){
+    $('.submitAboutMe').show()     
+    $('.aboutMe').show() 
+
+  })
 
 
 //Let's upload the image and add the text underneath

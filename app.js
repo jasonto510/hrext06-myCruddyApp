@@ -4,37 +4,50 @@ var array = [];
 $(document).ready(function(){
   // console.log('jQuery loaded');
 
-
+  //These buttons are going to be shown after btn-name is clicked
   $('.btn-delete').hide()
   $('.contactMe').hide()
+  $('.contact').hide()
+  $('.image-entry').hide()
+  $('.upload-image').hide()
+  $('.delete-image').hide()
+  $('.image-description').hide()
   // write to local storage from input when button save clicked
+
+
+
+  //Going to assign contact info show the buttons
   $('.btn-name').on('click', function(){
     $('.contactMe').show()    
-    $('.btn-delete').show()    
+    $('.btn-delete').show()  
+    $('.contact').show()
+    $('.image-entry').show()
+    $('.upload-image').show()
+    $('.delete-image').show()    
+    $('.image-description').show()
     $('.btn-name').hide()
     $('.name').hide()
     $('.phone-number').hide()
     $('.eMail').hide()
+    $('.aboutMe').hide()    
     var user = sessionStorage.getItem('inputFieldValue');
     user = user ? user.split(':') : []
     var userName =  $('.name').val()   
     var userNumber = $('.phone-number').val()
     var userEmail =  $('.eMail').val()
+    var about = $('.aboutMe').val()    
     user.push(userName, userNumber, userEmail)
     // user.push(userNumber)
     // user.push(userEmail)
-    user = user.join(": ")
+    user = user.join("~ ")
     sessionStorage.setItem('inputFieldValue', user)
-
+    $('.aboutmeLeft').text(about)    
     //Prints it out on the screen
     var myItemInStorage = sessionStorage.getItem('inputFieldValue');
     // console.log('user' , user);
 
     // display the value here
-    $('.text-entry').val("")  
-    $('.list-display-field').text("Contact Info:")    
     $('.list-display-field').text(myItemInStorage); // ??
-
     //How do I create a new line 
     // $('.list-display-field').append("hi")
   });
@@ -48,25 +61,44 @@ $(document).ready(function(){
     $('.name').show()
     $('.phone-number').show()
     $('.eMail').show()   
+    $('.aboutMe').show()        
     sessionStorage.removeItem('inputFieldValue'); //Only removes the last item in local storage with the given key
   });
 
 
-
+//Let's upload the image and add the text underneath
   $('.upload-image').on('click', function(){
-    console.log("did this work"); //Button works 
-    // var image = document.getElementsByClassName("image-entry")
+    $('.images').show()
     var image = $(".image-entry").val()
-    console.log(image)
+    var imagetext = $('.image-description').val()
+    console.log(imagetext)
     $('.images').append('<img src="' + image + '" height="150" width="200">')
      // $('.images').append('<img src="https://www.what-dog.net/Images/faces2/scroll001.jpg">')
+    $('.images').append(''+ imagetext )
   });
 
+
+//Need to work on this one 
   $('.delete-image').on('click', function(){
     console.log("hi");
-     $(".image-entry").remove(); //Kind of iffy on this one
+     $(".images").remove(); //Kind of iffy on this one
   });
 
+//Fades out the image if it's clicked 
+  $(".images").on('click', function(){
+    console.log("did this work or not?")
+    $('.images').hide('fade')
+  })
+
+   
+
+  var getCurrentTime = function(){
+    var d = new Date()
+    return d;
+  }
+  var displayTime = function(){
+    $(".time").append('<div style = "color: black">' +  getCurrentTime() + '</div>')
+  }()
   //Delete all items from local storage when clicked 
   // $('.btn-delete-all').on('click', function(){
   //   localStorage.clear();

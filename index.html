@@ -2,7 +2,9 @@
 <html>
   <head>
     <title>Photo Portfolio</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">    
     <link rel="stylesheet" href="style.css">
+
     <script
             src="https://code.jquery.com/jquery-3.3.1.js"
             integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
@@ -10,7 +12,11 @@
     <script src="app.js"></script>
   </head>
   <body>
+<h1>
+  Welcome to my portfolio
+</h1>
 
+<a href="/Users/jasonto/Downloads/code.mp3">Play Music </a>
 <!--   <form> 
     User Name: <br>
     <input type="test" name="username"><br>
@@ -18,32 +24,38 @@
     <input type="password" name="psw">
   </form>
  -->
+<!-- <iframe src="spotify:track:4pWawf1Rq4qHDv4Ktqjg2D" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> -->
+
 
 <!--   <img src="https://www.what-dog.net/Images/faces2/scroll001.jpg">
  -->  <div>
+    <div class="time"> </div>
+
     <input class="name" type="text" placeholder="Please enter your name">
     <input class="phone-number" type="text" placeholder="Please enter your phone number">
-    <input class="eMail" type="text" placeholder="Please enter your e-mail address">        
-    <button class="btn-name" type="button">Please Enter Your Name</button>
-    <button class-""
+    <input class="eMail" type="text" placeholder="Please enter your e-mail address">       
+    <button class="btn-name" type="button">Submit</button>
     <button class="btn-delete" type="button">Change Contact Information</button>
 <!--     <button class="btn-delete-all" type="button">delete all values</button>
  -->  </div>
+  <div class="contact"> Contact Information </div>
   <div class="list-display-field">
-    Please Enter Your Contact Information: Name, Address, ect.
   </div>
- <br>
- <br>
- <br>
- <br>
- <br>
- <br>
+  
+<div> 
+  <input class="aboutMe" type="text" placeholder="Tell me about yourself">
+<div>
 
-
-  <div> 
+<div class="aboutmeLeft" ></div>
+<div class="headerAbout">About Me</div>
+  <div>
     <input class="image-entry" type="text" placeholder="Please enter a URL of your image">  
-    <button class="upload-image" type="button">Upload Image URL Here</button>
-    <button class="delete-image" type="button">Delete All Images on Screen </button>    
+    <button class="upload-image" type="button">Upload Image Here</button>
+    <button class="delete-image" type="button">Delete All Images on Screen </button>   
+  </div>
+  <div>
+    <input class="image-description" type="text" placeholder="Describe the image">
+
   </div>
   <div class="images"></div>
   </body>

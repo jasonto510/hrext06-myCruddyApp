@@ -1,22 +1,61 @@
 .text-entry {
 /*  display: flex;
 */  justify-content: center;
-    align-content: center;
- 
+    align-content: center; 
 } 
 
+h1 {
+	color: green;
+	text-align: center;
+/*	justify-content: center;
+*//*	margin-left: 400px;
+*/}
+
+body {
+  background-color: lightblue;
+}
+
+.aboutMe {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100px;
+  width: 250px;
+}
+
+.aboutmeLeft {
+  position: absolute;
+  top: 25px;
+  right: 0;
+  border-color: black;
+  width: 100px;
+  height: 100px;
+}
+
+.headerAbout{
+  position:absolute;
+  font-size: 25px;
+  top: 0;
+  right: 0;
+}
+
+.time {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
 .images {
-  margin-left: 300px;
-  justify-content: center;
+/*  margin-left: 300px;
+*/  justify-content: center;
   display: flex;	
   flex-wrap: wrap;
   height: 150px;
-  width: 600px;
+  width: 1000px;
 }
 
 .contact {
 	position: absolute;
-	bottom: 25px;
+	bottom: 50px;
 	right: 0;
 	font-size: 25px;
 }
@@ -25,5 +64,6 @@
   bottom: 0;
   right: 0;
   font-size: 25px;
+
 }
 

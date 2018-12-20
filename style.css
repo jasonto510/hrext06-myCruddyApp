@@ -15,21 +15,24 @@ body {
   background-color: lightblue;
 }
 
-.aboutMe {
+/*.aboutMe {
   display: flex;
-  flex-wrap: wrap;
-  height: 100px;
-  width: 250px;
-}
+  word-wrap: break-word;
+  text-overflow:ellipsis;
+}*/
+
+
+
+
 
 .aboutmeLeft {
   position: absolute;
-  top: 25px;
+  top: 30px;
   right: 0;
   border-color: black;
-  width: 100px;
-  height: 100px;
-}
+  width: 150px;
+/*  height: 100px;
+*/}
 
 .headerAbout{
   position:absolute;
@@ -55,7 +58,7 @@ body {
 
 .contact {
 	position: absolute;
-	bottom: 50px;
+	bottom: 25px;
 	right: 0;
 	font-size: 25px;
 }
